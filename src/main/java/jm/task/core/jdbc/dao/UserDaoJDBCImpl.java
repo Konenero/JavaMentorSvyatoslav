@@ -16,12 +16,12 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-        String myTableName = "CREATE TABLE users (" +
-                "id INT NOT NULL AUTO_INCREMENT," +
-                " name VARCHAR(10)," +
-                "lastName VARCHAR(10)," +
-                " age INT," +
-                " PRIMARY KEY(id));";
+        String myTableName = "CREATE TABLE users ("
+                + "id INT NOT NULL AUTO_INCREMENT,"
+                + " name VARCHAR(10),"
+                + "lastName VARCHAR(10),"
+                + " age INT,"
+                + " PRIMARY KEY(id));";
         try {
             Connection con = Util.setConnection();
             Statement st = con.createStatement();
@@ -48,10 +48,10 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             Connection con = Util.setConnection();
             Statement st = con.createStatement();
-            int res = st.executeUpdate(String.format("INSERT INTO users (" +
-                            "name, lastName, age) " +
-                            "VALUES ('%s', '%s', '%s');",
-                    name, lastName, age));
+            int res = st.executeUpdate(String.format("INSERT INTO users ("
+                    + "name, lastName, age) "
+                    + "VALUES ('%s', '%s', '%s');"
+                    ,name, lastName, age));
             con.close();
             st.close();
         } catch (SQLException e) {
@@ -63,8 +63,8 @@ public class UserDaoJDBCImpl implements UserDao {
     public void removeUserById(long id) {
         try {
             Connection con = Util.setConnection();
-            Statement st = con.prepareStatement(String.format(
-                    "delete from users where id = %s", id));
+            Statement st = con.prepareStatement(String
+                    .format("delete from users where id = %s", id));
         } catch (SQLException e) {
             e.printStackTrace();
         }
