@@ -26,9 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="88882886-27b4-4424-9313-435d03a16806">
-        <schema name="information_schema" object-types="table, view, procedure, function" />
-        <schema name="java_mentor" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
-        <schema name="mysql" object-types="table, view, procedure, function" />
+        <schema name="java_mentor" object-types="table, view, procedure, function" />
       </connection>
     </loaded-nodes>
   </component>
